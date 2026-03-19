@@ -25,9 +25,7 @@ metadata: {"openclaw": {"requires": {"env": ["WAKATIME_API_KEY"]}, "primaryEnv":
 | Item | Detail |
 |------|--------|
 | **Runtime** | **Python 3.10+**, stdlib only (uses PEP 604 union types). |
-| **Env** | **`WAKATIME_API_KEY`** — HTTP **Basic** with key only (see WakaTime account) |
-| **Network** | HTTPS to **`https://wakatime.com`** |
-| **Registry** | `metadata.openclaw.requires.env` includes **`WAKATIME_API_KEY`** |
+| **Env** | **`WAKATIME_API_KEY`** |
 
 ## Subcommands
 
