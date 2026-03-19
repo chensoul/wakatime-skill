@@ -7,11 +7,13 @@
 [![License](https://img.shields.io/github/license/chensoul/wakatime-skill)](./LICENSE)
 [![Publish to ClawHub](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml/badge.svg)](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml)
 
-Wakatime coding stats (summaries, projects, today status, totals) via a small Python CLI.
+WakaTime coding stats (summaries, projects, today status, totals) via a small Python CLI.
 
 ## Install
 
 Copy or symlink this folder so your agent discovers **`SKILL.md`** at the skill root.
+
+**Python:** **3.10+** required (stdlib only, no dependencies). GitHub Actions CI runs tests on **3.10**.
 
 ## Configuration
 
@@ -34,7 +36,7 @@ python3 scripts/wakatime_query.py summaries --range "Last 7 Days"    # Title Cas
 python3 scripts/wakatime_query.py summaries --range last_7_days      # snake_case preset (same query param)
 ```
 
-Full examples: **[SKILL.md](SKILL.md)** · API reference: **[references/wakatime-api.md](references/wakatime-api.md)**.
+Full examples: **[references/wakatime-api.md](references/wakatime-api.md)** · Agent workflow: **[SKILL.md](SKILL.md)**.
 
 ## Tests
 

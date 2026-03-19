@@ -127,9 +127,15 @@ def cmd_health(api_root: str, hdr: dict[str, str], *, timeout: float) -> None:
             resp.read()
     except urllib.error.HTTPError as e:
         try:
-            e.read()
-        except OSError:
-            pass
+            try:
+                e.read()
+            except OSError:
+                pass
+        finally:
+            try:
+                e.close()
+            except OSError:
+                pass
         print(json.dumps({"healthy": False}))
         raise SystemExit(1) from e
     except urllib.error.URLError:

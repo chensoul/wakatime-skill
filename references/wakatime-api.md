@@ -32,15 +32,17 @@ Authorization: Basic <base64(api_key)>
 Accept: application/json
 ```
 
-OAuth / `api_key` query parameters exist in WakaTime docs; **this CLI uses Basic only**.
+[WakaTime Developers — Authentication](https://wakatime.com/developers#authentication) expects the secret API key **base64-encoded as the payload** (then prefixed with `Basic `), not `username:password` form. OAuth / `api_key` query parameters also exist in their docs; **this CLI uses Basic only**.
 
 ## CLI output (matches `wakatime_query.py`)
 
 | Case | Stream | Notes |
 |------|--------|--------|
 | Success | stdout | JSON; most subcommands use **indented** JSON. **`health`** prints one-line **`{"healthy": …}`**. |
-| HTTP/API error | stderr | JSON with **`http_status`** / **`error`**; process exits **1**. |
-| Network / URL error | stderr | Text message; exits **2**. |
+| HTTP/API error (non-`health`) | stderr | JSON with **`http_status`** / **`error`**; exit **1**. |
+| HTTP/network error (`health` only) | stdout then exit **1** | Prints **`{"healthy": false}`** on stdout (does **not** use the stderr JSON shape above). **`URLError`** same. |
+| Network / URL error (other commands) | stderr | Text message; exit **2**. |
+| Non-JSON success body (other commands) | stderr | Plain-text parse error; exit **1**. |
 
 ## Endpoints used by this CLI (GET)
 
@@ -108,7 +110,9 @@ python3 scripts/wakatime_query.py summaries --range "Last 14 Days" --project "my
 python3 scripts/wakatime_query.py summaries --range last_30_days --writes-only true --timeout 300
 ```
 
-## CLI examples (aligned with SKILL.md)
+## Full CLI examples
+
+Canonical copy-paste examples for the bundled CLI (SKILL.md keeps a short subset and links here).
 
 ```bash
 export WAKATIME_API_KEY="…"
@@ -186,7 +190,7 @@ Preset spellings are defined by [WakaTime Summaries](https://wakatime.com/develo
 ## curl examples
 
 ```bash
-# Build Basic auth: username empty, password = API key → base64(key) only in header
+# Build Authorization header per WakaTime: base64(API_KEY) only (see developers#authentication)
 API_KEY='your-api-key'
 B64=$(printf '%s' "$API_KEY" | base64 | tr -d '\n')
 BASE='https://wakatime.com/api/v1/users/current'
