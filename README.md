@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/chensoul/wakatime-skill)](./LICENSE)
 [![Publish to ClawHub](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml/badge.svg)](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml)
 
-WakaTime coding stats (summaries, projects, today status, totals) via a small Python CLI.
+Query WakaTime coding statistics including time ranges, projects, languages, categories, editors, and machines. 
 
 ## Install
 
@@ -21,7 +21,7 @@ Copy or symlink this folder so your agent discovers **`SKILL.md`** at the skill 
 |----------|----------|---------|
 | `WAKATIME_API_KEY` | Yes | Key from your WakaTime account (**HTTP Basic**, key only). |
 
-API host is **fixed** in code to **`https://wakatime.com`** ([WakaTime](https://wakatime.com)); no `WAKATIME_URL`.
+API host is **fixed** in code to **`https://wakatime.com`** ([WakaTime](https://wakatime.com)).
 
 ## Run CLI
 
@@ -36,8 +36,6 @@ python3 scripts/wakatime_query.py summaries --range "Last 7 Days"    # Title Cas
 python3 scripts/wakatime_query.py summaries --range last_7_days      # snake_case preset (same query param)
 ```
 
-Full examples: **[references/wakatime-api.md](references/wakatime-api.md)** · Agent workflow: **[SKILL.md](SKILL.md)**.
-
 ## Tests
 
 ```bash
@@ -47,4 +45,3 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 ## Docs
 
 - Agent instructions: [`SKILL.md`](SKILL.md)
-- API notes: [`references/wakatime-api.md`](references/wakatime-api.md)
