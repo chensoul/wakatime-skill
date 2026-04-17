@@ -3,9 +3,9 @@
 [![ClawHub](https://img.shields.io/badge/ClawHub-wakatime--skill-blue)](https://clawhub.ai/skills/wakatime-skill)
 [![ClawHub version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fclawhub.ai%2Fapi%2Fv1%2Fskills%2Fwakatime-skill&query=%24.skill.tags.latest&label=clawhub&prefix=v&color=blue)](https://clawhub.ai/skills/wakatime-skill)
 [![ClawHub downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fclawhub.ai%2Fapi%2Fv1%2Fskills%2Fwakatime-skill&query=%24.skill.stats.downloads&label=clawhub%20downloads&color=blue)](https://clawhub.ai/skills/wakatime-skill)
-[![GitHub stars](https://img.shields.io/github/stars/chensoul/wakatime-skill?style=flat&logo=github)](https://github.com/chensoul/wakatime-skill)
-[![License](https://img.shields.io/github/license/chensoul/wakatime-skill)](./LICENSE)
-[![Publish to ClawHub](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml/badge.svg)](https://github.com/chensoul/wakatime-skill/actions/workflows/clawhub-publish.yml)
+[![GitHub stars](https://img.shields.io/github/stars/zhijunio/wakatime-skill?style=flat&logo=github)](https://github.com/zhijunio/wakatime-skill)
+[![License](https://img.shields.io/github/license/zhijunio/wakatime-skill)](./LICENSE)
+[![Publish to ClawHub](https://github.com/zhijunio/wakatime-skill/actions/workflows/clawhub-publish.yml/badge.svg)](https://github.com/zhijunio/wakatime-skill/actions/workflows/clawhub-publish.yml)
 
 Query WakaTime coding statistics including time ranges, projects, languages, categories, editors, and machines. 
 
